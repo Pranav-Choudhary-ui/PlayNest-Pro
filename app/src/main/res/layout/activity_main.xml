@@ -16,63 +16,127 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/main_top_layout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-        <ImageView
-            android:id="@+id/main_icon"
-            android:layout_width="100dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="Icon Logo"
-            android:src="@drawable/ic_logo"
+        <LinearLayout
+            android:id="@+id/topMenu"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <ImageView
+                android:id="@+id/main_icon"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Icon Logo"
+                android:src="@drawable/ic_logo"
+                />
+        </LinearLayout>
+
+
+<!-- Main Body of the App -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/parentRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topMenu"
+            app:layout_constraintBottom_toTopOf="@id/bottomMenu"
             />
-    </LinearLayout>
 
 
-     <ScrollView
-         android:id="@+id/main_scroll_view"
-         android:layout_width="match_parent"
-         android:layout_height="0dp"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/main_top_layout"
-         app:layout_constraintBottom_toTopOf="@+id/main_base_options"
-         >
+<!-- Bottom Navigation Menu -->
+         <LinearLayout
+             android:id="@+id/bottomMenu"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:background="#FFFFFF"
+             android:orientation="horizontal"
+             android:weightSum="3"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent">
 
-     </ScrollView>
-     <LinearLayout
-         android:id="@+id/main_base_options"
-         android:layout_width="match_parent"
-         android:layout_height="50dp"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintBottom_toBottomOf="parent"
-         >
+             <!-- Home -->
+             <LinearLayout
+                 android:id="@+id/home"
+                 android:layout_width="0dp"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:orientation="vertical"
+                 android:background="?attr/selectableItemBackground"
+                 android:gravity="center"
+                 android:clickable="true"
+                 android:focusable="true">
 
-         <ImageView
-             android:id="@+id/"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:src=""
-             />
-         <ImageView
-             android:id="@+id/"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:src=""
-             />
-     </LinearLayout>
+                 <ImageView
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:src="@drawable/ic_home"
+                     android:tint="#444444" />
 
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Home"
+                     android:textColor="@color/black"
+                     android:textSize="12sp" />
+             </LinearLayout>
 
+             <!-- History -->
+             <LinearLayout
+                 android:id="@+id/history"
+                 android:layout_width="0dp"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:orientation="vertical"
+                 android:background="?attr/selectableItemBackground"
+                 android:gravity="center"
+                 android:clickable="true"
+                 android:focusable="true">
+             <ImageView
+                 android:layout_width="24dp"
+                 android:layout_height="24dp"
+                 android:src="@drawable/ic_history"
+                 android:tint="#444444" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="History"
+                 android:textColor="@color/black"
+                 android:textSize="12sp" />
+             </LinearLayout>
+
+             <!-- Profile -->
+             <LinearLayout
+                 android:id="@+id/profile"
+                 android:layout_width="0dp"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:orientation="vertical"
+                 android:background="?attr/selectableItemBackground"
+                 android:gravity="center"
+                 android:clickable="true"
+                 android:focusable="true">
+
+                 <ImageView
+                     android:layout_width="24dp"
+                     android:layout_height="24dp"
+                     android:src="@drawable/ic_profile"
+                     android:tint="#444444" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Profile"
+                     android:textColor="@color/black"
+                     android:textSize="12sp" />
+             </LinearLayout>
+         </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
