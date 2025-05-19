@@ -23,4 +23,38 @@ public class APIResult{
     @Expose
     private List<Movie> results = null;
 
+    public APIResult() {
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(Integer totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public Integer getTotalResuts() {
+        return totalResuts;
+    }
+
+    public void setTotalResuts(Integer totalResuts) {
+        this.totalResuts = totalResuts;
+    }
+
+    public List<Movie> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Movie> results) {
+        this.results = results;
+    }
 }

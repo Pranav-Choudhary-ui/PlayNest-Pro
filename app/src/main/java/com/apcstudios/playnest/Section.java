@@ -1,5 +1,7 @@
 package com.apcstudios.playnest;
 
+import com.apcstudios.playnest.model.Movie;
+
 import java.util.List;
 
 public class Section {
