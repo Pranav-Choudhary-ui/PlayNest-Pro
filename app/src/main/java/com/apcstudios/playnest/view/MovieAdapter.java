@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.apcstudios.playnest.R;
+import com.apcstudios.playnest.databinding.MovieItemBinding;
 import com.apcstudios.playnest.model.Movie;
 
 import java.util.ArrayList;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>{
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>{ // This adapter file is the bridge between Data Source and UI Components
 
     private Context context;
     private ArrayList<Movie> movieArrayList;
@@ -26,10 +28,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        MovieListItemBinding binding = DataBindingUtil
+        MovieItemBinding binding = DataBindingUtil
                 .inflate(
                         LayoutInflater.from(parent.getContext()),
-                        R.layout.movie_list_item,
+                        R.layout.movie_item,
                         parent,
                         false
                 );
@@ -39,7 +41,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movieArrayList.get(position);
-        holder.movieListItemBinding.setMovie(movie);
+        holder.movieItemBinding.setMovie(movie);
+        holder.movieItemBinding.executePendingBindings();
+
     }
 
     @Override
@@ -48,28 +52,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder{
-        private MovieListItemBinding movieListItemBinding;
+    public static class MovieViewHolder extends RecyclerView.ViewHolder{
+        private final MovieItemBinding movieItemBinding;
 
-        public MovieViewHolder(MovieListItemBinding movieListItemBinding) {
-            super(movieListItemBinding.getRoot());
-            this.movieListItemBinding = movieListItemBinding;
+        public MovieViewHolder(MovieItemBinding movieItemBinding) {
+            super(movieItemBinding.getRoot());
+            this.movieItemBinding = movieItemBinding;
 
-            movieListItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
+            movieItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     int position = getAdapterPosition();
 
-
                 }
             });
-
-
-
-
-
-
         }
     }
 

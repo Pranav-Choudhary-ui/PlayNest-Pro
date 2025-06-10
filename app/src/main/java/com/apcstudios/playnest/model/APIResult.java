@@ -1,30 +1,28 @@
 package com.apcstudios.playnest.model;
 
-import android.graphics.Movie;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import kotlin.jvm.internal.SerializedIr;
 
-public class APIResult{
+public class APIResult{ // This Class is to fetch data from the API
     @SerializedName("page")
     @Expose
     private Integer page;
+    @SerializedName("results")
+    @Expose
+    private List<Movie> results = null;
     @SerializedName("total_pages")
     @Expose
     private Integer totalPages;
     @SerializedName("total_results")
     @Expose
-    private Integer totalResuts;
-    @SerializedName("results")
-    @Expose
-    private List<Movie> results = null;
+    private Integer totalResults;
 
-    public APIResult() {
-    }
+
+
 
     public Integer getPage() {
         return page;
@@ -32,6 +30,14 @@ public class APIResult{
 
     public void setPage(Integer page) {
         this.page = page;
+    }
+
+    public List<Movie> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Movie> results) {
+        this.results = results;
     }
 
     public Integer getTotalPages() {
@@ -42,19 +48,14 @@ public class APIResult{
         this.totalPages = totalPages;
     }
 
-    public Integer getTotalResuts() {
-        return totalResuts;
+    public Integer getTotalResults() {
+        return totalResults;
     }
 
-    public void setTotalResuts(Integer totalResuts) {
-        this.totalResuts = totalResuts;
+    public void setTotalResults(Integer totalResults) {
+        this.totalResults = totalResults;
     }
 
-    public List<Movie> getResults() {
-        return results;
-    }
-
-    public void setResults(List<Movie> results) {
-        this.results = results;
+    public APIResult() {
     }
 }

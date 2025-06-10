@@ -46,10 +46,10 @@ dependencies {
 
 //    // Retrofit Library
 //    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-//    // ViewModel support
+    // ViewModel support
 //    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.7.0")
-//
-//    // LiveData support
+
+    // LiveData support
 //    implementation ("androidx.lifecycle:lifecycle-livedata:2.7.0")
 
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")

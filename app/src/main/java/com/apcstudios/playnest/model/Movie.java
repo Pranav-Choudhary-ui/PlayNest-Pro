@@ -1,12 +1,23 @@
 package com.apcstudios.playnest.model;
 
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.library.baseAdapters.BR;
+
 import java.util.List;
 //import javax.annotation.Generated;
+import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import javax.annotation.processing.Generated;
+
 //@Generated("jsonschema2pojo")
-public class Movie {
+public class Movie extends BaseObservable {  // This Class is the blueprint of the movie data that is to be fetched and displayed.
 
     @SerializedName("adult")
     @Expose
@@ -51,6 +62,18 @@ public class Movie {
     @Expose
     private Integer voteCount;
 
+
+    @BindingAdapter({"posterPath"})
+    public static void loadImage(ImageView imageView, String imageUrl){
+        // Basic Url: "https://image.tmdb.org/t/p/w500/"
+        String imagePath = "https://image.tmdb.org/t/p/w500/" + imageUrl;
+
+        Glide.with(imageView.getContext())
+                .load(imagePath)
+                .into(imageView);
+    }
+
+    @Bindable
     public Boolean getAdult() {
         return adult;
     }
@@ -58,7 +81,7 @@ public class Movie {
     public void setAdult(Boolean adult) {
         this.adult = adult;
     }
-
+    @Bindable
     public String getBackdropPath() {
         return backdropPath;
     }
@@ -66,7 +89,7 @@ public class Movie {
     public void setBackdropPath(String backdropPath) {
         this.backdropPath = backdropPath;
     }
-
+    @Bindable
     public List<Integer> getGenreIds() {
         return genreIds;
     }
@@ -74,7 +97,7 @@ public class Movie {
     public void setGenreIds(List<Integer> genreIds) {
         this.genreIds = genreIds;
     }
-
+    @Bindable
     public Integer getId() {
         return id;
     }
@@ -82,7 +105,7 @@ public class Movie {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    @Bindable
     public String getOriginalLanguage() {
         return originalLanguage;
     }
@@ -90,7 +113,7 @@ public class Movie {
     public void setOriginalLanguage(String originalLanguage) {
         this.originalLanguage = originalLanguage;
     }
-
+    @Bindable
     public String getOriginalTitle() {
         return originalTitle;
     }
@@ -98,7 +121,7 @@ public class Movie {
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
     }
-
+    @Bindable
     public String getOverview() {
         return overview;
     }
@@ -106,7 +129,7 @@ public class Movie {
     public void setOverview(String overview) {
         this.overview = overview;
     }
-
+    @Bindable
     public Double getPopularity() {
         return popularity;
     }
@@ -114,15 +137,16 @@ public class Movie {
     public void setPopularity(Double popularity) {
         this.popularity = popularity;
     }
-
+    @Bindable
     public String getPosterPath() {
         return posterPath;
     }
 
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
+        notifyPropertyChanged(BR.posterPath);
     }
-
+    @Bindable
     public String getReleaseDate() {
         return releaseDate;
     }
@@ -130,7 +154,7 @@ public class Movie {
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
-
+    @Bindable
     public String getTitle() {
         return title;
     }
@@ -138,7 +162,7 @@ public class Movie {
     public void setTitle(String title) {
         this.title = title;
     }
-
+    @Bindable
     public Boolean getVideo() {
         return video;
     }
@@ -146,7 +170,7 @@ public class Movie {
     public void setVideo(Boolean video) {
         this.video = video;
     }
-
+    @Bindable
     public Double getVoteAverage() {
         return voteAverage;
     }
@@ -154,7 +178,7 @@ public class Movie {
     public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }
-
+    @Bindable
     public Integer getVoteCount() {
         return voteCount;
     }
@@ -162,6 +186,9 @@ public class Movie {
     public void setVoteCount(Integer voteCount) {
         this.voteCount = voteCount;
     }
+
+
+
 
 }
 
