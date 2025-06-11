@@ -1,6 +1,5 @@
 package com.apcstudios.playnest.model;
 
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import androidx.databinding.BaseObservable;
@@ -14,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import javax.annotation.processing.Generated;
+//import javax.annotation.processing.Generated;
 
 //@Generated("jsonschema2pojo")
 public class Movie extends BaseObservable {  // This Class is the blueprint of the movie data that is to be fetched and displayed.

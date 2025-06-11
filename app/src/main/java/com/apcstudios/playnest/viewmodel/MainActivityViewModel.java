@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.apcstudios.playnest.model.Movie;
-import com.apcstudios.playnest.model.MovieRepository;
+import com.apcstudios.playnest.repository.MovieRepository;
 
 import java.util.List;
 

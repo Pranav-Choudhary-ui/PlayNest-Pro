@@ -1,10 +1,12 @@
-package com.apcstudios.playnest.model;
+package com.apcstudios.playnest.repository;
 
 import android.app.Application;
 
 import androidx.lifecycle.MutableLiveData;
 
 import com.apcstudios.playnest.R;
+import com.apcstudios.playnest.model.APIResult;
+import com.apcstudios.playnest.model.Movie;
 import com.apcstudios.playnest.serviceapi.MovieApiService;
 import com.apcstudios.playnest.serviceapi.RetrofitInstance;
 

@@ -11,6 +11,6 @@ public interface MovieApiService {
     @GET("movie/popular")
     Call<APIResult> getPopularMovies(@Query("api_key") String apiKey);
 
-    @GET("movie/upcoming")
-    Call<APIResult> getUpcomingMovies(@Query("api_key") String apiKey);
+//    @GET("movie/upcoming")
+//    Call<APIResult> getUpcomingMovies(@Query("api_key") String apiKey);
 }
